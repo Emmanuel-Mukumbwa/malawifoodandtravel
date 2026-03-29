@@ -24,7 +24,7 @@ const destinations = [
     id: 3,
     name: "Misuku Hills",
     location: "Chitipa District",
-    description: "Lush green hills with tea estates, hiking trails, and breathtaking panoramas.",
+    description: "Lush green hills with coffee estates, hiking trails, and breathtaking panoramas.",
     image: "/images/destinations/misuku-hills.jpg",
     category: "scenic",
   },
