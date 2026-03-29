@@ -18,4 +18,4 @@ export default function FeatureCard({ icon, title, description }: FeatureCardPro
       <p className="text-secondary text-center mb-0">{description}</p>
     </div>
   );
-}
+} 
