@@ -27,7 +27,6 @@ export default function Header() {
           className={styles.hamburger}
           onClick={toggleMenu}
           aria-label="Toggle navigation"
-          aria-expanded={isOpen}
         >
           <span></span>
           <span></span>
@@ -44,6 +43,16 @@ export default function Header() {
             <li>
               <Link href="/destinations" className={styles.navLink} onClick={closeMenu}>
                 Destinations
+              </Link>
+            </li>
+            <li>
+              <Link href="/itineraries" className={styles.navLink} onClick={closeMenu}>
+                Itineraries
+              </Link>
+            </li>
+            <li>
+              <Link href="/gallery" className={styles.navLink} onClick={closeMenu}>
+                Gallery
               </Link>
             </li>
             <li>
