@@ -2,6 +2,7 @@
 import { useSearchParams } from "next/navigation";
 import { Container, Row, Col, Card, Badge } from "react-bootstrap";
 import Image from "next/image";
+import styles from '@/components/Shared.module.css';
 
 const destinations = [
   {
@@ -98,12 +99,8 @@ export default function DestinationsPage() {
 
   return (
     <Container className="py-5">
-      <h1 className="mb-4 text-center" style={{ color: "#212529" }}>
-        Explore Malawi
-      </h1>
-      <p className="text-center mb-5" style={{ color: "#212529" }}>
-        Discover culinary experiences and must‑see attractions across Malawi.
-      </p>
+      <h1 className="mb-4 text-center text-dark">Explore Malawi</h1>
+      <p >Discover culinary experiences and must‑see attractions across Malawi.</p>
 
       {categoryFilter && (
         <div className="text-center mb-4">
@@ -116,7 +113,7 @@ export default function DestinationsPage() {
         {filtered.map((dest) => (
           <Col key={dest.id} md={6} lg={4}>
             <Card className="h-100 shadow-sm border-0">
-              <div className="position-relative" style={{ height: "220px", overflow: "hidden" }}>
+              <div className={styles.imgCrop}>
                 <Image
                   src={dest.image}
                   alt={dest.name}
