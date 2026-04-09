@@ -58,6 +58,12 @@
   border-bottom-color: #d2691e;
 }
 
+/* Active link styling */
+.navLink.active {
+  color: #d2691e;
+  border-bottom-color: #d2691e;
+}
+
 /* Hamburger button */
 .hamburger {
   display: none;
