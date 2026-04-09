@@ -9,6 +9,7 @@ import {
   FaLandmark,
   FaUmbrellaBeach,
 } from "react-icons/fa";
+import Link from "next/link";
 import styles from "./FeaturesSection.module.css";
 
 const culinaryFeatures = [
@@ -122,9 +123,9 @@ export default function FeaturesSection() {
       </Row>
 
       <div className="text-center mt-5">
-        <Button href="/destinations" className={styles.ctaButton}>
+        <Link href="/destinations" className={styles.outlineButton}>
           View All Destinations
-        </Button>
+        </Link>
       </div>
     </section>
   );
