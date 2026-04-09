@@ -55,7 +55,7 @@ export default function Header() {
                 Gallery
               </Link>
             </li>
-            <li>
+            <li> 
               <Link href="/about" className={styles.navLink} onClick={closeMenu}>
                 About
               </Link>
