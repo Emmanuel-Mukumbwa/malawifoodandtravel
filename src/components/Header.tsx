@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import styles from "./Header.module.css";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
@@ -15,6 +17,14 @@ export default function Header() {
     window.addEventListener("popstate", handleRouteChange);
     return () => window.removeEventListener("popstate", handleRouteChange);
   }, []);
+
+  const navItems = [
+    { href: "/", label: "Home" },
+    { href: "/destinations", label: "Destinations" },
+    { href: "/itineraries", label: "Itineraries" },
+    { href: "/gallery", label: "Gallery" },
+    { href: "/about", label: "About" },
+  ];
 
   return (
     <header className={styles.header}>
@@ -36,31 +46,20 @@ export default function Header() {
 
         <nav>
           <ul className={`${styles.nav} ${isOpen ? styles.open : ""}`}>
-            <li>
-              <Link href="/" className={styles.navLink} onClick={closeMenu}>
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/destinations" className={styles.navLink} onClick={closeMenu}>
-                Destinations
-              </Link>
-            </li>
-            <li>
-              <Link href="/itineraries" className={styles.navLink} onClick={closeMenu}>
-                Itineraries
-              </Link>
-            </li>
-            <li>
-              <Link href="/gallery" className={styles.navLink} onClick={closeMenu}>
-                Gallery
-              </Link>
-            </li>
-            <li> 
-              <Link href="/about" className={styles.navLink} onClick={closeMenu}>
-                About
-              </Link>
-            </li>
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className={`${styles.navLink} ${isActive ? styles.active : ""}`}
+                    onClick={closeMenu}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </div>
