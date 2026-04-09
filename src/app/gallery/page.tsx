@@ -37,9 +37,7 @@ function GalleryGrid({ items, onSelect }: GalleryGridProps) {
               <Card.Text className={styles.caption}>{img.caption}</Card.Text>
 
               <div className={styles.cardFooter}>
-                <small className={styles.categoryTag}>
-                  {img.category}
-                </small>
+                <small className={styles.categoryTag}>{img.category}</small>
                 <Button
                   size="sm"
                   className={styles.viewButton}
@@ -81,10 +79,13 @@ export default function GalleryPage() {
           {categories.map((c) => (
             <Button
               key={c}
-              variant={filter === c ? "success" : "outline-success"}
+              variant="light"
               size="sm"
               onClick={() => setFilter(c)}
-              className={styles.filterButton}
+              className={`${styles.filterButton} ${
+                filter === c ? styles.filterButtonActive : ""
+              }`}
+              aria-pressed={filter === c}
             >
               {c.charAt(0).toUpperCase() + c.slice(1)}
             </Button>
