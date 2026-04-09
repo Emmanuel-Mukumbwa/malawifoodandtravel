@@ -94,8 +94,7 @@ export default function FeaturesSection() {
         <span className={styles.eyebrow}>Curated experiences</span>
         <h2 className={styles.sectionTitle}>Culinary Experiences</h2>
         <p className={styles.sectionLead}>
-          Taste Malawi through food, farming, and seasonal celebrations shaped by
-          local culture.
+          Taste Malawi through food, farming, and seasonal celebrations shaped by local culture.
         </p>
       </div>
 
