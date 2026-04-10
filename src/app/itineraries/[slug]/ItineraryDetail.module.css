@@ -14,7 +14,7 @@
 .pageShell::before {
   content: "";
   position: absolute;
-  inset: 0; 
+  inset: 0;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
@@ -100,6 +100,69 @@
   padding: 0.4rem 0.7rem;
 }
 
+.heroChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.9rem;
+}
+
+.heroChip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.42rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  font-size: 0.84rem;
+  line-height: 1;
+  backdrop-filter: blur(10px);
+}
+
+.gallerySection {
+  position: relative;
+  z-index: 1;
+  margin: 1rem 0 1.2rem;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(31, 45, 42, 0.08);
+  box-shadow: 0 12px 28px rgba(31, 45, 42, 0.06);
+  backdrop-filter: blur(10px);
+}
+
+.galleryHeader {
+  margin-bottom: 0.8rem;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: #1f2d2a;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.galleryLead {
+  margin: 0.35rem 0 0;
+  color: rgba(31, 45, 42, 0.72);
+  line-height: 1.6;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.galleryItem {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  border-radius: 1rem;
+  background: #e9efe8;
+  border: 1px solid rgba(31, 45, 42, 0.08);
+}
+
 .contentCard,
 .sidebarCard {
   position: relative;
@@ -111,13 +174,6 @@
   border: 1px solid rgba(31, 45, 42, 0.08);
   box-shadow: 0 16px 34px rgba(31, 45, 42, 0.08);
   backdrop-filter: blur(10px);
-}
-
-.sectionTitle {
-  margin: 0 0 0.8rem;
-  color: #1f2d2a;
-  font-size: 1.35rem;
-  font-weight: 800;
 }
 
 .subTitle,
@@ -212,6 +268,12 @@
   padding-top: 0.25rem;
 }
 
+@media (max-width: 992px) {
+  .galleryGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
   .pageShell {
     padding: 1rem;
@@ -227,8 +289,13 @@
   }
 
   .contentCard,
-  .sidebarCard {
+  .sidebarCard,
+  .gallerySection {
     padding: 1rem;
     border-radius: 1.25rem;
+  }
+
+  .galleryGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
