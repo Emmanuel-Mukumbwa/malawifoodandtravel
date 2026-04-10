@@ -1,3 +1,4 @@
+//src/app/itineraries/[slug]/page.tsx
 import itineraries from "@/data/itineraries";
 import Image from "next/image";
 import {
