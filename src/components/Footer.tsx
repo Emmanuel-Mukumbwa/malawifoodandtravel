@@ -1,3 +1,5 @@
+import { FaPhoneAlt } from "react-icons/fa";
+
 export default function Footer() {
   return (
     <footer className="footer mt-auto py-4 bg-dark text-white">
@@ -18,9 +20,31 @@ export default function Footer() {
               <a href="/itineraries" className="text-white text-decoration-none small">Itineraries</a>
               <a href="/gallery" className="text-white text-decoration-none small">Gallery</a>
               <a href="/about" className="text-white text-decoration-none small">About</a>
+              <a href="/contact" className="text-white text-decoration-none small">Contact</a>
             </div>
           </div>
         </div>
+
+        {/* Contact row – phone numbers */}
+        <div className="row mt-3 pt-2">
+          <div className="col-12 text-center">
+            <div className="d-flex flex-wrap justify-content-center gap-4">
+              <div className="d-flex align-items-center gap-2">
+                <FaPhoneAlt style={{ color: "#d2691e", fontSize: "0.9rem" }} />
+                <a href="tel:+265991238419" className="text-white text-decoration-none small">
+                  0991 238 419
+                </a>
+              </div>
+              <div className="d-flex align-items-center gap-2">
+                <FaPhoneAlt style={{ color: "#d2691e", fontSize: "0.9rem" }} />
+                <a href="tel:+265992374652" className="text-white text-decoration-none small">
+                  0992 374 652
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <hr className="my-3 bg-white-50" />
         <div className="text-center small text-white-50">
           &copy; {new Date().getFullYear()} Malawi Food & Travel. All rights reserved.
