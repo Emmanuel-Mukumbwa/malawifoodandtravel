@@ -268,6 +268,7 @@
   padding-top: 0.25rem;
 }
 
+/* Responsive gallery grid */
 @media (max-width: 992px) {
   .galleryGrid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -286,6 +287,25 @@
 
   .heroText {
     inset: auto 1rem 1rem 1rem;
+    max-width: 90%;
+  }
+
+  .heroTitle {
+    font-size: 1.6rem;      /* prevent cropping */
+    line-height: 1.2;
+  }
+
+  .heroMeta {
+    font-size: 0.8rem;
+  }
+
+  .heroChip {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .heroBadge {
+    font-size: 0.7rem;
   }
 
   .contentCard,
@@ -297,5 +317,21 @@
 
   .galleryGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 576px) {
+  .heroImage {
+    aspect-ratio: 4 / 3;
+    min-height: 240px;
+  }
+
+  .heroTitle {
+    font-size: 1.3rem;
+  }
+
+  .heroText {
+    inset: auto 0.75rem 0.75rem 0.75rem;
   }
 }
