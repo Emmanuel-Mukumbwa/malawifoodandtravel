@@ -1,4 +1,3 @@
-//src/app/itineraries/[slug]/page.tsx
 import itineraries from "@/data/itineraries";
 import Image from "next/image";
 import {
@@ -6,7 +5,6 @@ import {
   Row,
   Col,
   Badge,
-  Button,
 } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
 import AccordionItem from "react-bootstrap/AccordionItem";
@@ -15,6 +13,7 @@ import AccordionBody from "react-bootstrap/AccordionBody";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import styles from "@/app/itineraries/[slug]/ItineraryDetail.module.css";
+import BookingButton from "@/components/BookingButton"; // new import
 
 export async function generateStaticParams() {
   return itineraries.map((it) => ({ slug: it.slug }));
@@ -162,12 +161,7 @@ export default async function ItineraryDetail({ params }: PageProps) {
               <h5 className={styles.sidebarTitle}>Pricing</h5>
               <p className={styles.sidebarPrice}>{it.priceRange}</p>
 
-              <Button
-                href={`/contact?subject=${encodeURIComponent(it.title)}`}
-                className={styles.primaryButton}
-              >
-                Request a Quote
-              </Button>
+              <BookingButton itineraryTitle={it.title} /> {/* replaced button */}
 
               <div className={styles.sidebarBlock}>
                 <h6 className={styles.sidebarSubTitle}>Included</h6>
