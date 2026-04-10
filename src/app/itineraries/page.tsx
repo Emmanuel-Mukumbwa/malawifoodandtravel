@@ -7,7 +7,7 @@ import itineraries from "@/data/itineraries";
 import Link from "next/link";
 import styles from "./ItinerariesPage.module.css";
 
-const filters = ["all", "lake", "food", "hiking"] as const;
+const filters = ["all", "lake", "food", "hiking", "city"] as const;
 type Filter = (typeof filters)[number];
 
 const filterLabels: Record<Filter, string> = {
@@ -15,6 +15,7 @@ const filterLabels: Record<Filter, string> = {
   lake: "Lake",
   food: "Food",
   hiking: "Hiking",
+  city: "City",
 };
 
 export default function ItinerariesPage() {
