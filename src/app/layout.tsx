@@ -19,7 +19,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Malawi Food & Travel",
+  title: "Malo Athu",
   description: "Discover Malawi's rich culinary traditions and breathtaking travel destinations.",
 };
 
