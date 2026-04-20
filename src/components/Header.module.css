@@ -52,7 +52,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.4rem;
   z-index: 1001;
 }
 
@@ -69,6 +69,7 @@
 @media (max-width: 768px) {
   .hamburger {
     display: block;
+    margin-left: auto;
   }
 
   .nav {
