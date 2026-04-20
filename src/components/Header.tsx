@@ -9,7 +9,7 @@ export default function Header() {
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
-
+ 
   useEffect(() => {
     const handleRouteChange = () => closeMenu();
     window.addEventListener("popstate", handleRouteChange);
@@ -20,7 +20,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className="container d-flex justify-content-between align-items-center">
         <Link href="/" className={styles.logo} onClick={closeMenu}>
-          <span>Malawi</span> Food & Travel
+          <span>Malo</span> Athu
         </Link>
 
         <button
